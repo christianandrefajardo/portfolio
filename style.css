@@ -3,7 +3,6 @@ body{
 	margin: 0;
 	padding: 0;
 	color: white;
-	/*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
 	font-family: Montserrat;
 	overflow-x: hidden;
 }
@@ -29,7 +28,7 @@ h1,h2,h3,h4,h5,h6{
 	text-transform: uppercase;
 }
 
-.showcase::after{
+.showcase{
 	content: '';
 	height: 100vh;
 	width: 100%;
@@ -39,12 +38,23 @@ h1,h2,h3,h4,h5,h6{
 	background-position: center;
 	background-attachment: fixed;
 	display: block;
-	filter: blur(10px);
+	/*filter: blur(10px);
 	-webkit-filter: blur(10px);
-	transition: all 1000ms;
+	transition: all 1000ms;*/
 }
 
-.showcase:hover::after{
+.showcase::after{
+	background-color: rgba(51, 48, 48,0.9);
+	width: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	/*z-index: -1;*/
+	content: '';
+}
+
+/*.showcase:hover::after{
 	filter: blur(0px);
 	-webkit-filter: blur(0px);
 }
@@ -52,10 +62,10 @@ h1,h2,h3,h4,h5,h6{
 .showcase:hover .content{
 	filter: blur(2px);
 	-webkit-filter: blur(2px);
-}
+}*/
 
 .content{
-	color: black;
+	color: white;
 	position: absolute;
 	z-index: 1;
 	top: 10%;
@@ -75,13 +85,28 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .content .title{
-	/*font-size: 2.2rem;*/
+	font-size: 1.5rem;
 	margin-top: 1rem;
+	font-weight: normal;
 }
 
 .content .text{
 	line-height: 1.7rem;
 	margin-top: 1rem;
+}
+
+.content .lg-heading{
+	font-size: 4rem;
+	font-weight: 400;
+}
+
+
+.content .lg-heading .text-secondary{
+	color: #207ce5;
+}
+
+.content .sm-heading{
+	font-weight: 400;
 }
 
 .container{
@@ -117,6 +142,12 @@ h1,h2,h3,h4,h5,h6{
 	justify-content: inter-word;
 }
 
+.about img{
+	height: 180px;
+	width: 180px;
+	border-radius: 50%;
+}
+
 .about a{
 	color: white;
 }
@@ -138,6 +169,7 @@ h1,h2,h3,h4,h5,h6{
 	padding: 2rem 0.5rem;
 	/*margin: 0;*/
 }
+
 
 .projects div img{
 	height: 200px;
@@ -165,6 +197,10 @@ h1,h2,h3,h4,h5,h6{
 	text-align: left;
 }
 
+.skills h1, .projects h1{
+	font-size: 3rem;
+}
+
 .contact li{
 	text-align: left;
 	margin-top: 0.3rem;
@@ -189,8 +225,12 @@ footer p{
 /*Small Screens*/
 @media (max-width: 560px){
 
+	.showcase{
+		height: 55vh;
+	}
+
 	.showcase::after{
-		height: 60vh;
+		height: 55vh;
 	}
 
 	.content{
@@ -201,6 +241,10 @@ footer p{
 	.content .logo img{
 		height: 140px;
 		width: 140px;
+	}
+
+	.content .lg-heading{
+		font-size: 3rem;
 	}
 
 	/*.content .text{
@@ -215,7 +259,7 @@ footer p{
 		grid-template-rows: 1fr;
 	}
 
-	.skills div{
+	.skills, .project{
 		border-bottom: #333 dashed 1px;
 		padding: 1.2rem 1rem;
 	}
