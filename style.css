@@ -253,7 +253,6 @@ h1,h2,h3,h4,h5,h6{
 	/*margin: 0;*/
 }
 
-
 .projects div img{
 	height: 200px;
 	width: 300px;
@@ -263,6 +262,11 @@ h1,h2,h3,h4,h5,h6{
 .projects a{
 	text-decoration: none;
 	color: #f4f4f4;
+	transition: all .5s;
+}
+
+.projects a:hover{
+	color: #207ce5;
 }
 
 .projects p{
